@@ -8,6 +8,8 @@ using System.Windows.Media;
 using Microsoft.Web.WebView2.WinForms;
 using Microsoft.Web.WebView2.Core;
 using System.Diagnostics.Eventing.Reader;
+using System.Xml.Schema;
+using System.Threading.Tasks;
 
 namespace MetronomeApp
 {
@@ -23,6 +25,7 @@ namespace MetronomeApp
         private int dividend;
         private static int beatCount;
         private static long currentTimestamp;
+        private static bool playing;
 
         public Metronome()
         {
@@ -49,6 +52,8 @@ namespace MetronomeApp
             metronomeUpBeatSample.Open(new Uri(upBeatSamplePath));
 
             sampleComboBox.SelectedIndex = 0;
+
+            playing = false;
 
             this.ActiveControl = bpmLabel; // Set focus to the label to clear other focused elements
         }
@@ -105,7 +110,7 @@ namespace MetronomeApp
             metronomeTimer.Start();
         }
 
-        private void startButton_Click(object sender, EventArgs e)
+        private async void startButton_Click(object sender, EventArgs e)
         {
             startButton.BackColor = System.Drawing.Color.Orange;
 
@@ -120,22 +125,20 @@ namespace MetronomeApp
             if (!double.TryParse(bpmTextBox.Text, out bpm))
                 bpm = 120; // Default value
 
-
             // Convert BMP to milliseconds
             double bps = (bpm / 60);
             double doubleMilliseconds = ((1 / bps) * 1000);
             int milliseconds = (int)doubleMilliseconds;
 
-
             metronomeTimer.Stop();
             playMetronome(milliseconds);
         }
 
-
-        private void stopButton_Click(object sender, EventArgs e)
+        private async void stopButton_Click(object sender, EventArgs e)
         {
             metronomeTimer.Stop();
             startButton.BackColor = System.Drawing.Color.LightGray;
+            this.ActiveControl = null; // Reset focus
         }
 
 
@@ -210,6 +213,28 @@ namespace MetronomeApp
         {
             if (int.TryParse(timeSignatureDividend.Text, out dividend))
                 dividend = 4; // Default value
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Console.WriteLine("Key down detected");
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.ActiveControl = null;
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+                if (playing)
+                { 
+                    stopButton_Click(null, null);
+                    playing = false;
+                }
+                else
+                {
+                    startButton_Click(null, null); // Start the metronome
+                    playing = true;
+                }
+            }
         }
     }
 }

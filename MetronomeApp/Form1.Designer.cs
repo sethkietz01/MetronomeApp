@@ -49,7 +49,7 @@
             // bpmTextBox
             // 
             this.bpmTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bpmTextBox.Location = new System.Drawing.Point(429, 124);
+            this.bpmTextBox.Location = new System.Drawing.Point(474, 124);
             this.bpmTextBox.Name = "bpmTextBox";
             this.bpmTextBox.Size = new System.Drawing.Size(89, 20);
             this.bpmTextBox.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.startButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.startButton.CausesValidation = false;
             this.startButton.ForeColor = System.Drawing.Color.Black;
-            this.startButton.Location = new System.Drawing.Point(385, 193);
+            this.startButton.Location = new System.Drawing.Point(430, 193);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             this.stopButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.stopButton.ForeColor = System.Drawing.Color.Black;
-            this.stopButton.Location = new System.Drawing.Point(492, 193);
+            this.stopButton.Location = new System.Drawing.Point(537, 193);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(75, 23);
             this.stopButton.TabIndex = 2;
@@ -86,7 +86,7 @@
             this.bpmLabel.AutoSize = true;
             this.bpmLabel.Font = new System.Drawing.Font("Yu Gothic UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bpmLabel.ForeColor = System.Drawing.Color.White;
-            this.bpmLabel.Location = new System.Drawing.Point(443, 89);
+            this.bpmLabel.Location = new System.Drawing.Point(488, 89);
             this.bpmLabel.Name = "bpmLabel";
             this.bpmLabel.Size = new System.Drawing.Size(63, 32);
             this.bpmLabel.TabIndex = 3;
@@ -99,7 +99,7 @@
             this.timeSignatureDividend.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.timeSignatureDividend.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeSignatureDividend.ForeColor = System.Drawing.Color.White;
-            this.timeSignatureDividend.Location = new System.Drawing.Point(452, 50);
+            this.timeSignatureDividend.Location = new System.Drawing.Point(497, 50);
             this.timeSignatureDividend.Name = "timeSignatureDividend";
             this.timeSignatureDividend.Size = new System.Drawing.Size(14, 24);
             this.timeSignatureDividend.TabIndex = 4;
@@ -112,7 +112,7 @@
             this.timeSignatureDividerLabel.AutoSize = true;
             this.timeSignatureDividerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeSignatureDividerLabel.ForeColor = System.Drawing.Color.White;
-            this.timeSignatureDividerLabel.Location = new System.Drawing.Point(466, 48);
+            this.timeSignatureDividerLabel.Location = new System.Drawing.Point(511, 48);
             this.timeSignatureDividerLabel.Name = "timeSignatureDividerLabel";
             this.timeSignatureDividerLabel.Size = new System.Drawing.Size(20, 29);
             this.timeSignatureDividerLabel.TabIndex = 5;
@@ -125,7 +125,7 @@
             this.timeSignatureDivisor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.timeSignatureDivisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeSignatureDivisor.ForeColor = System.Drawing.Color.White;
-            this.timeSignatureDivisor.Location = new System.Drawing.Point(484, 50);
+            this.timeSignatureDivisor.Location = new System.Drawing.Point(529, 50);
             this.timeSignatureDivisor.Name = "timeSignatureDivisor";
             this.timeSignatureDivisor.Size = new System.Drawing.Size(14, 24);
             this.timeSignatureDivisor.TabIndex = 6;
@@ -141,7 +141,7 @@
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView21.Location = new System.Drawing.Point(149, 251);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(677, 329);
+            this.webView21.Size = new System.Drawing.Size(766, 381);
             this.webView21.TabIndex = 7;
             this.webView21.ZoomFactor = 1D;
             // 
@@ -149,7 +149,7 @@
             // 
             this.tapButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tapButton.ForeColor = System.Drawing.Color.Black;
-            this.tapButton.Location = new System.Drawing.Point(537, 122);
+            this.tapButton.Location = new System.Drawing.Point(582, 122);
             this.tapButton.Name = "tapButton";
             this.tapButton.Size = new System.Drawing.Size(75, 23);
             this.tapButton.TabIndex = 8;
@@ -160,7 +160,7 @@
             // trackBar1
             // 
             this.trackBar1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trackBar1.Location = new System.Drawing.Point(429, 150);
+            this.trackBar1.Location = new System.Drawing.Point(474, 150);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(89, 45);
             this.trackBar1.TabIndex = 9;
@@ -172,7 +172,7 @@
             this.volumeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.volumeLabel.AutoSize = true;
             this.volumeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.volumeLabel.Location = new System.Drawing.Point(369, 159);
+            this.volumeLabel.Location = new System.Drawing.Point(414, 159);
             this.volumeLabel.Name = "volumeLabel";
             this.volumeLabel.Size = new System.Drawing.Size(63, 20);
             this.volumeLabel.TabIndex = 10;
@@ -190,7 +190,7 @@
             "Quartz",
             "Teeth",
             "Tongue"});
-            this.sampleComboBox.Location = new System.Drawing.Point(149, 161);
+            this.sampleComboBox.Location = new System.Drawing.Point(194, 161);
             this.sampleComboBox.Name = "sampleComboBox";
             this.sampleComboBox.Size = new System.Drawing.Size(121, 21);
             this.sampleComboBox.TabIndex = 11;
@@ -201,7 +201,7 @@
             this.sampleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sampleLabel.AutoSize = true;
             this.sampleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sampleLabel.Location = new System.Drawing.Point(177, 138);
+            this.sampleLabel.Location = new System.Drawing.Point(222, 138);
             this.sampleLabel.Name = "sampleLabel";
             this.sampleLabel.Size = new System.Drawing.Size(63, 20);
             this.sampleLabel.TabIndex = 12;
@@ -212,7 +212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(993, 614);
+            this.ClientSize = new System.Drawing.Size(1082, 666);
             this.Controls.Add(this.sampleLabel);
             this.Controls.Add(this.sampleComboBox);
             this.Controls.Add(this.volumeLabel);
@@ -228,8 +228,10 @@
             this.Controls.Add(this.bpmTextBox);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Metronome";
             this.Text = "Metronome App";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
