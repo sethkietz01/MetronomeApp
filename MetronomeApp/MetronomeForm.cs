@@ -58,6 +58,11 @@ namespace MetronomeApp
             this.ActiveControl = bpmLabel; // Set focus to the label to clear other focused elements
         }
 
+        /// <summary>
+        /// Clears browsing data (such as cookies) from the web view.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WebView21_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
         {
             if (e.IsSuccess)
@@ -66,6 +71,11 @@ namespace MetronomeApp
                 Console.WriteLine($"WebView2 initialization failed: {e.InitializationException}");
         }
 
+        /// <summary>
+        /// Plays the appropriate metronome sample.
+        /// </summary>
+        /// <param name="Object"></param>
+        /// <param name="eventArgs"></param>
         private static void metronomeTick(Object Object, EventArgs eventArgs)
         {
             // Initiate the flash on each tick
@@ -93,6 +103,11 @@ namespace MetronomeApp
             }
         }
 
+        /// <summary>
+        /// Flashes the BPM label from orange back to white.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FlashTimer_Tick(object sender, EventArgs e)
         {
             flashTimer.Stop();
@@ -110,6 +125,12 @@ namespace MetronomeApp
             metronomeTimer.Start();
         }
 
+        /// <summary>
+        /// Converts the BPM input text to milliseconds, changes the startButton color to orange,
+        ///     and starts the metronome.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void startButton_Click(object sender, EventArgs e)
         {
             startButton.BackColor = System.Drawing.Color.Orange;
@@ -134,6 +155,11 @@ namespace MetronomeApp
             playMetronome(milliseconds);
         }
 
+        /// <summary>
+        /// Stops the metronome and resets the startButton color.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void stopButton_Click(object sender, EventArgs e)
         {
             metronomeTimer.Stop();
@@ -141,7 +167,11 @@ namespace MetronomeApp
             this.ActiveControl = null; // Reset focus
         }
 
-
+        /// <summary>
+        /// Calculates the time in BPM between the current and last press of the tapButton.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tapButton_Click(object sender, EventArgs e)
         {
             long timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
@@ -160,6 +190,11 @@ namespace MetronomeApp
             currentTimestamp = timestamp;
         }
 
+        /// <summary>
+        /// Changes the volume of the metronome sample.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             float volume = trackBar1.Value / 10f;
@@ -167,6 +202,11 @@ namespace MetronomeApp
             metronomeUpBeatSample.Volume = volume;
         }
 
+        /// <summary>
+        /// Changes the metronome sample.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sampleComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (sampleComboBox.SelectedItem)
@@ -209,12 +249,22 @@ namespace MetronomeApp
             }
         }
 
+        /// <summary>
+        /// Updates the dividend of the time signature from the time signature text box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timeSignatureDividend_TextChanged(object sender, EventArgs e)
         {
             if (int.TryParse(timeSignatureDividend.Text, out dividend))
                 dividend = 4; // Default value
         }
 
+        /// <summary>
+        /// Event listener to start or stop the metronome when the enter key is pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             Console.WriteLine("Key down detected");
