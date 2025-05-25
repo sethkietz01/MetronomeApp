@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Metronome));
             this.bpmTextBox = new System.Windows.Forms.TextBox();
             this.startButton = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.volumeLabel = new System.Windows.Forms.Label();
             this.sampleComboBox = new System.Windows.Forms.ComboBox();
             this.sampleLabel = new System.Windows.Forms.Label();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +56,7 @@
             this.bpmTextBox.Size = new System.Drawing.Size(89, 20);
             this.bpmTextBox.TabIndex = 0;
             this.bpmTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bpmTextBox.TextChanged += new System.EventHandler(this.bpmTextBox_TextChanged);
             // 
             // startButton
             // 
@@ -254,6 +257,7 @@
         private System.Windows.Forms.Label volumeLabel;
         private System.Windows.Forms.ComboBox sampleComboBox;
         private System.Windows.Forms.Label sampleLabel;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 

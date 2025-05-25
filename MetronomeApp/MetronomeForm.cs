@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Media;
@@ -10,6 +11,7 @@ using Microsoft.Web.WebView2.Core;
 using System.Diagnostics.Eventing.Reader;
 using System.Xml.Schema;
 using System.Threading.Tasks;
+using System.Xml.Linq; // Add this for LINQ to XML
 
 namespace MetronomeApp
 {
@@ -146,6 +148,13 @@ namespace MetronomeApp
             if (!double.TryParse(bpmTextBox.Text, out bpm))
                 bpm = 120; // Default value
 
+            if (bpm < 1)
+            {
+                MessageBox.Show("Invalid value for BPM. Must be greater than 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                startButton.BackColor = System.Drawing.Color.LightGray;
+                return;
+            }
+
             // Convert BMP to milliseconds
             double bps = (bpm / 60);
             double doubleMilliseconds = ((1 / bps) * 1000);
@@ -214,37 +223,30 @@ namespace MetronomeApp
                 case "Basic":
                     metronomeDownBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\MetronomeUp.wav"));
                     metronomeUpBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\Metronome.wav"));
-
                     break;
                 case "Castanet":
                     metronomeDownBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\CastanetHigh.wav"));
                     metronomeUpBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\CastanetLow.wav"));
-
                     break;
                 case "Keyboard":
                     metronomeDownBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\KeyboardHigh.wav"));
                     metronomeUpBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\KeyboardLow.wav"));
-
                     break;
                 case "Knock":
                     metronomeDownBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\KnockHigh.wav"));
                     metronomeUpBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\KnockLow.wav"));
-
                     break;
                 case "Quartz":
                     metronomeDownBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\QuartzHigh.wav"));
                     metronomeUpBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\QuartzLow.wav"));
-
                     break;
                 case "Teeth":
                     metronomeDownBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\TeethHigh.wav"));
                     metronomeUpBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\TeethLow.wav"));
-
                     break;
                 case "Tongue":
                     metronomeDownBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\TongueHigh.wav"));
                     metronomeUpBeatSample.Open(new Uri(Application.StartupPath + "\\MetronomeSamples\\TongueLow.wav"));
-
                     break;
             }
         }
@@ -275,7 +277,7 @@ namespace MetronomeApp
                 e.SuppressKeyPress = true;
 
                 if (playing)
-                { 
+                {
                     stopButton_Click(null, null);
                     playing = false;
                 }
@@ -285,6 +287,11 @@ namespace MetronomeApp
                     playing = true;
                 }
             }
+        }
+
+        private void bpmTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
