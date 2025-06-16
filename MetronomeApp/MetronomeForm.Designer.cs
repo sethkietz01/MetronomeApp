@@ -213,6 +213,7 @@
             // 
             // toolsButton
             // 
+            this.toolsButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.toolsButton.ForeColor = System.Drawing.Color.Black;
             this.toolsButton.Location = new System.Drawing.Point(773, 158);
             this.toolsButton.Name = "toolsButton";

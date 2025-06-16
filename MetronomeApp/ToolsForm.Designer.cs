@@ -35,7 +35,7 @@
             // 
             // songsToLearnButton
             // 
-            this.songsToLearnButton.Location = new System.Drawing.Point(327, 104);
+            this.songsToLearnButton.Location = new System.Drawing.Point(345, 104);
             this.songsToLearnButton.Name = "songsToLearnButton";
             this.songsToLearnButton.Size = new System.Drawing.Size(95, 23);
             this.songsToLearnButton.TabIndex = 0;
@@ -58,7 +58,7 @@
             this.headerLabel.AutoSize = true;
             this.headerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerLabel.ForeColor = System.Drawing.Color.White;
-            this.headerLabel.Location = new System.Drawing.Point(320, 51);
+            this.headerLabel.Location = new System.Drawing.Point(338, 51);
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(102, 39);
             this.headerLabel.TabIndex = 2;
