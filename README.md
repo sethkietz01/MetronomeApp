@@ -5,4 +5,13 @@ This Metronome Application is written in C# using Windows Forms .NET. It is a si
 The main code file is MetronomeForm.cs, which can be found under MetronomeApp\MetronomeForm.cs.
 
 # Preview Image
+## Main Form
 ![Project Preview](MetronomeApp/Images/Preview.PNG)
+
+## Tools
+![Tools Preview](MetronomeApp/Images/ToolsPreview.PNG)  
+The tools form hosts links to other music-related tools offered by the application.
+
+## Songs to Learn
+![Songs to Learn Preview](MetronomeApp/Images/SongsToLearnPreview.PNG)  
+The songs to learn list is saved to a system setting when the Save button is pressed which is loaded and populates the text box on form initialization.
