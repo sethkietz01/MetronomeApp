@@ -44,6 +44,7 @@
             this.sampleComboBox = new System.Windows.Forms.ComboBox();
             this.sampleLabel = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.toolsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -210,12 +211,24 @@
             this.sampleLabel.TabIndex = 12;
             this.sampleLabel.Text = "Sample";
             // 
+            // toolsButton
+            // 
+            this.toolsButton.ForeColor = System.Drawing.Color.Black;
+            this.toolsButton.Location = new System.Drawing.Point(773, 158);
+            this.toolsButton.Name = "toolsButton";
+            this.toolsButton.Size = new System.Drawing.Size(75, 23);
+            this.toolsButton.TabIndex = 13;
+            this.toolsButton.Text = "Tools";
+            this.toolsButton.UseVisualStyleBackColor = true;
+            this.toolsButton.Click += new System.EventHandler(this.toolsButton_Click);
+            // 
             // Metronome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1082, 666);
+            this.Controls.Add(this.toolsButton);
             this.Controls.Add(this.sampleLabel);
             this.Controls.Add(this.sampleComboBox);
             this.Controls.Add(this.volumeLabel);
@@ -258,6 +271,7 @@
         private System.Windows.Forms.ComboBox sampleComboBox;
         private System.Windows.Forms.Label sampleLabel;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Button toolsButton;
     }
 }
 

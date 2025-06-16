@@ -11,7 +11,7 @@ using Microsoft.Web.WebView2.Core;
 using System.Diagnostics.Eventing.Reader;
 using System.Xml.Schema;
 using System.Threading.Tasks;
-using System.Xml.Linq; // Add this for LINQ to XML
+using System.Xml.Linq;
 
 namespace MetronomeApp
 {
@@ -293,5 +293,13 @@ namespace MetronomeApp
         {
 
         }
+
+        private void toolsButton_Click(object sender, EventArgs e)
+        {
+            ToolsForm toolsForm = new ToolsForm();
+            toolsForm.ShowDialog();
+        }
+
+        
     }
 }
